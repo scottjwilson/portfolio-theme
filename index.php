@@ -114,7 +114,7 @@
                             <li>SvelteKit / Svelte</li>
                             <li>React / Next.js</li>
                             <li>TypeScript</li>
-                            <li>Tailwind CSS</li>
+                            <li>Tailwind CSS / Bootstrap</li>
                         </ul>
                     </div>
                     <?php
