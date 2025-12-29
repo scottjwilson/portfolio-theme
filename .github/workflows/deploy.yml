@@ -21,3 +21,4 @@ jobs:
         remote-user: scottjwilsoncom
         private-ssh-key: ${{ secrets.SSH_KEY }}
         destination-path: /home/scottjwilsoncom/public_html/wp-content/themes/portfolio-theme/
+        ssh-port: 6543
