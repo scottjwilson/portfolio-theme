@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite build --watch",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottjwilson/portfolio-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/scottjwilson/portfolio-theme/issues"
+  },
+  "homepage": "https://github.com/scottjwilson/portfolio-theme#readme",
+  "devDependencies": {
+    "sass": "^1.97.2",
+    "vite": "^7.3.1"
+  }
+}
