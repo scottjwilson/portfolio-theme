@@ -65,12 +65,17 @@ function portfolio_enqueue_assets() {
     // Check if Vite is being used
     $vite = portfolio_detect_vite_server();
     
-    // If Vite is running in dev or manifest exists in production, skip direct enqueues
-    if ($vite['running'] || (!defined('WP_DEBUG') || !WP_DEBUG) && file_exists(get_theme_file_path('dist/.vite/manifest.json'))) {
+    // Check if manifest exists (production build)
+    $manifest_path = get_theme_file_path('dist/.vite/manifest.json');
+    $manifest_exists = file_exists($manifest_path);
+    
+    // If Vite is running in dev OR manifest exists in production, skip direct enqueues
+    // (load_vite_assets will handle production assets)
+    if ($vite['running'] || $manifest_exists) {
         return; // Vite will handle assets via load_vite_assets()
     }
     
-    // Fallback: enqueue directly if Vite is not available
+    // Fallback: enqueue directly if Vite is not available and no manifest exists
     // CSS Variables (depends on Google Fonts to ensure font loads first)
     wp_enqueue_style('variables', get_template_directory_uri() . '/css/variables.css', array('google-fonts'), '1.0.0');
     
