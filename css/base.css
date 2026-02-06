@@ -457,6 +457,34 @@ footer {
     margin: 0;
 }
 
+.challenge-card__problem ul,
+.challenge-card__solution ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.challenge-card__problem ul li,
+.challenge-card__solution ul li {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.challenge-card__problem ul li::before,
+.challenge-card__solution ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+    opacity: 0.4;
+}
+
 .project-footer {
     display: flex;
     gap: 1rem;

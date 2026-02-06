@@ -49,3 +49,45 @@ require_once PORTFOLIO_THEME_PATH . "/inc/customizer.php";
 // Include template functions (if needed in the future)
 // require_once PORTFOLIO_THEME_PATH . '/inc/template-sections.php';
 // require_once PORTFOLIO_THEME_PATH . '/inc/template-functions.php';
+
+/**
+ * Format challenge text: converts bullet-point lines into a <ul> list,
+ * otherwise returns paragraphs with line breaks.
+ */
+function portfolio_format_challenge_text($text)
+{
+    $lines = preg_split('/\r\n|\r|\n/', $text);
+    $bullet_pattern = "/^[\x{2022}\x{2023}\x{25E6}\x{2043}\x{2219}•\-\*]\s*/u";
+    $list_items = [];
+    $has_bullets = false;
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === "") {
+            continue;
+        }
+        if (preg_match($bullet_pattern, $line)) {
+            $has_bullets = true;
+            $clean = preg_replace($bullet_pattern, "", $line);
+            $list_items[] = "<li>" . esc_html($clean) . "</li>";
+        } else {
+            $list_items[] = $line;
+        }
+    }
+
+    if ($has_bullets) {
+        $output = "<ul>";
+        foreach ($lines as $line) {
+            $line = trim($line);
+            if ($line === "") {
+                continue;
+            }
+            $clean = preg_replace($bullet_pattern, "", $line);
+            $output .= "<li>" . esc_html($clean) . "</li>";
+        }
+        $output .= "</ul>";
+        return $output;
+    }
+
+    return nl2br(esc_html($text));
+}
