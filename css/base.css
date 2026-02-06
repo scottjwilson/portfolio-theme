@@ -133,6 +133,12 @@ section {
     animation: fadeIn 0.6s ease 0.4s forwards;
 }
 
+.project-single section {
+    padding: 0;
+    opacity: 1;
+    animation: none;
+}
+
 h2 {
     font-size: 2rem;
     margin-bottom: 3rem;
