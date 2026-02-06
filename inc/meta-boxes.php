@@ -137,11 +137,8 @@ function save_project_meta($post_id)
                 $clean[] = ["problem" => $problem, "solution" => $solution];
             }
         }
-        update_post_meta(
-            $post_id,
-            "_project_challenges",
-            wp_json_encode($clean, JSON_UNESCAPED_UNICODE),
-        );
+        $json = wp_json_encode($clean, JSON_UNESCAPED_UNICODE);
+        update_post_meta($post_id, "_project_challenges", wp_slash($json));
     } else {
         delete_post_meta($post_id, "_project_challenges");
     }
