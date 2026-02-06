@@ -134,9 +134,8 @@ section {
 }
 
 .project-single section {
-    padding: 0;
+    padding: 2rem 0;
     opacity: 1;
-    animation: none;
 }
 
 h2 {
@@ -374,7 +373,7 @@ footer {
 }
 
 .project-overview {
-    margin-bottom: 4rem;
+    margin: 0;
 }
 
 .project-overview h2 {
