@@ -7,6 +7,10 @@
     --border: #e4e4e7;
     --card-bg: #fafafa;
     --card-hover: #f4f4f5;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
+    --card-radius: 12px;
+    --placeholder-bg: #f0f0f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,5 +23,8 @@
         --border: #27272a;
         --card-bg: rgba(255, 255, 255, 0.03);
         --card-hover: rgba(255, 255, 255, 0.05);
+        --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
+        --placeholder-bg: rgba(255, 255, 255, 0.05);
     }
 }
