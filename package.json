@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/scottjwilson/portfolio-theme#readme",
   "devDependencies": {
-    "sass": "^1.97.2",
     "vite": "^7.3.1"
   }
 }
