@@ -57,8 +57,8 @@ require_once PORTFOLIO_THEME_PATH . "/inc/customizer.php";
 function portfolio_format_challenge_text($text)
 {
     $lines = preg_split('/\r\n|\r|\n/', $text);
-    $bullet_pattern = "/^[\x{2022}\x{2023}\x{25E6}\x{2043}\x{2219}•\-\*]\s*/u";
-    $list_items = [];
+    $bullet_pattern =
+        '/^[\x{2022}\x{2023}\x{25E6}\x{2043}\x{2219}•\-\*]\s*\t?/u';
     $has_bullets = false;
 
     foreach ($lines as $line) {
@@ -68,10 +68,7 @@ function portfolio_format_challenge_text($text)
         }
         if (preg_match($bullet_pattern, $line)) {
             $has_bullets = true;
-            $clean = preg_replace($bullet_pattern, "", $line);
-            $list_items[] = "<li>" . esc_html($clean) . "</li>";
-        } else {
-            $list_items[] = $line;
+            break;
         }
     }
 
@@ -83,6 +80,10 @@ function portfolio_format_challenge_text($text)
                 continue;
             }
             $clean = preg_replace($bullet_pattern, "", $line);
+            $clean = trim($clean);
+            if ($clean === "") {
+                continue;
+            }
             $output .= "<li>" . esc_html($clean) . "</li>";
         }
         $output .= "</ul>";
