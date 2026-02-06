@@ -471,17 +471,6 @@ footer {
     color: var(--text-dim);
     font-size: 0.95rem;
     line-height: 1.7;
-    padding-left: 1.25rem;
-    position: relative;
-}
-
-.challenge-card__problem ul li::before,
-.challenge-card__solution ul li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--text-dim);
-    opacity: 0.4;
 }
 
 .project-footer {
