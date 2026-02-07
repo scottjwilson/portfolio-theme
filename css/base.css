@@ -580,13 +580,14 @@ footer {
         font-size: 2rem;
     }
 
-    .project-body {
-        grid-template-columns: 1fr;
+    .project-single > .project-body,
+    .project-single > section {
+        margin-top: 1.5rem;
     }
 
-    .project-overview,
-    .project-challenges {
-        margin-bottom: 3rem;
+    .project-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .challenge-card__problem,
