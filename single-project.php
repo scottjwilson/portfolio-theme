@@ -4,7 +4,6 @@
     while (have_posts()):
 
         the_post();
-        $tags = get_post_meta(get_the_ID(), "_project_tags", true);
         $url = get_post_meta(get_the_ID(), "_project_url", true);
 
         // ACF fields
@@ -18,6 +17,7 @@
         $solutions = get_field("project_solutions");
 
         $has_quick_facts = $role || $project_type || $stack || $focus;
+        $tags = $stack ? array_map("trim", explode(",", $stack)) : [];
         ?>
 
 <article class="project-single">
@@ -28,12 +28,9 @@
     <header class="project-header">
         <?php if ($tags): ?>
             <div class="tags">
-                <?php
-                $tag_array = array_map("trim", explode(",", $tags));
-                foreach ($tag_array as $tag) {
-                    echo '<span class="tag">' . esc_html($tag) . "</span>";
-                }
-                ?>
+                <?php foreach ($tags as $tag): ?>
+                    <span class="tag"><?php echo esc_html($tag); ?></span>
+                <?php endforeach; ?>
             </div>
         <?php endif; ?>
         <h1><?php the_title(); ?></h1>
@@ -62,75 +59,6 @@
                     </div>
                 </section>
             <?php endif; ?>
-
-            <?php if ($has_quick_facts): ?>
-                <aside class="project-quick-facts">
-                    <h3>Quick Facts</h3>
-                    <?php if ($role): ?>
-                        <div class="quick-fact">
-                            <span class="quick-fact__label">Role</span>
-                            <span class="quick-fact__value"><?php echo esc_html(
-                                $role,
-                            ); ?></span>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($project_type): ?>
-                        <div class="quick-fact">
-                            <span class="quick-fact__label">Type</span>
-                            <span class="quick-fact__value"><?php echo esc_html(
-                                $project_type,
-                            ); ?></span>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($stack): ?>
-                        <div class="quick-fact">
-                            <span class="quick-fact__label">Stack</span>
-                            <span class="quick-fact__value"><?php echo nl2br(
-                                esc_html($stack),
-                            ); ?></span>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($focus): ?>
-                        <div class="quick-fact">
-                            <span class="quick-fact__label">Focus</span>
-                            <span class="quick-fact__value"><?php echo nl2br(
-                                esc_html($focus),
-                            ); ?></span>
-                        </div>
-                    <?php endif; ?>
-                </aside>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
-
-    <?php if ($responsibilities): ?>
-        <section class="project-responsibilities">
-            <h2>What I Did</h2>
-            <div class="project-content">
-                <?php echo $responsibilities; ?>
-            </div>
-        </section>
-    <?php endif; ?>
-
-    <?php if ($problems || $solutions): ?>
-        <section class="project-challenges">
-            <h2>Challenges & Solutions</h2>
-            <div class="challenge-card">
-                <?php if ($problems): ?>
-                    <div class="challenge-card__problem">
-                        <span class="challenge-label">The Problem</span>
-                        <?php echo $problems; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if ($solutions): ?>
-                    <div class="challenge-card__solution">
-                        <span class="challenge-label">The Solution</span>
-                        <?php echo $solutions; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </section>
-    <?php endif; ?>
 
     <div class="project-footer">
         <a href="<?php echo home_url(

@@ -45,16 +45,10 @@
                     while ($projects->have_posts()):
 
                         $projects->the_post();
-                        $tags = get_post_meta(
-                            get_the_ID(),
-                            "_project_tags",
-                            true,
-                        );
-                        $url = get_post_meta(
-                            get_the_ID(),
-                            "_project_url",
-                            true,
-                        );
+                        $stack = get_field("stack");
+                        $tags = $stack
+                            ? array_map("trim", explode(",", $stack))
+                            : [];
                         ?>
                         <div class="project-card" onclick="window.location.href='<?php echo esc_url(
                             get_permalink(),
@@ -83,17 +77,11 @@
                                 ); ?></p>
                                 <?php if ($tags): ?>
                                     <div class="tags">
-                                        <?php
-                                        $tag_array = array_map(
-                                            "trim",
-                                            explode(",", $tags),
-                                        );
-                                        foreach ($tag_array as $tag) {
-                                            echo '<span class="tag">' .
-                                                esc_html($tag) .
-                                                "</span>";
-                                        }
-                                        ?>
+                                        <?php foreach ($tags as $tag): ?>
+                                            <span class="tag"><?php echo esc_html(
+                                                $tag,
+                                            ); ?></span>
+                                        <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
