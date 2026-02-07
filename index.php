@@ -72,6 +72,7 @@
                             <div class="project-card__content">
                                 <h3><?php the_title(); ?></h3>
                                 <p><?php echo wp_trim_words(
+                                    get_field("project_overview") ?:
                                     get_the_content(),
                                     20,
                                 ); ?></p>
