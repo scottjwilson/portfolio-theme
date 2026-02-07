@@ -4,14 +4,13 @@
     while (have_posts()):
 
         the_post();
-        $url = get_post_meta(get_the_ID(), "_project_url", true);
-
         // ACF fields
         $overview = get_field("project_overview");
         $role = get_field("role");
         $project_type = get_field("project_type");
         $stack = get_field("stack");
         $focus = get_field("focus");
+        $url = get_field("project_url");
         $responsibilities = get_field("project_responsibilities");
         $problems = get_field("project_problems");
         $solutions = get_field("project_solutions");

@@ -1,66 +1,8 @@
 <?php
 /**
  * Meta Boxes
- * Handles custom meta boxes for projects and skills
+ * Handles custom meta boxes for skills
  */
-
-/**
- * Add project URL meta box
- */
-function add_project_meta_boxes()
-{
-    add_meta_box(
-        "project_details",
-        "Project Details",
-        "render_project_meta_box",
-        "project",
-        "normal",
-        "high",
-    );
-}
-add_action("add_meta_boxes", "add_project_meta_boxes");
-
-/**
- * Render project meta box
- */
-function render_project_meta_box($post)
-{
-    wp_nonce_field("project_meta_box", "project_meta_box_nonce");
-
-    $url = get_post_meta($post->ID, "_project_url", true);
-
-    echo "<p><label>Project URL:</label><br>";
-    echo '<input type="text" name="project_url" value="' .
-        esc_attr($url) .
-        '" style="width:100%"></p>';
-}
-
-/**
- * Save project meta data
- */
-function save_project_meta($post_id)
-{
-    if (!isset($_POST["project_meta_box_nonce"])) {
-        return;
-    }
-    if (
-        !wp_verify_nonce($_POST["project_meta_box_nonce"], "project_meta_box")
-    ) {
-        return;
-    }
-    if (defined("DOING_AUTOSAVE") && DOING_AUTOSAVE) {
-        return;
-    }
-
-    if (isset($_POST["project_url"])) {
-        update_post_meta(
-            $post_id,
-            "_project_url",
-            esc_url_raw($_POST["project_url"]),
-        );
-    }
-}
-add_action("save_post_project", "save_project_meta");
 
 /**
  * Add skill category meta box
