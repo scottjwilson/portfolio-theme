@@ -6,17 +6,18 @@
         the_post();
         $tags = get_post_meta(get_the_ID(), "_project_tags", true);
         $url = get_post_meta(get_the_ID(), "_project_url", true);
-        $challenges_json = get_post_meta(
-            get_the_ID(),
-            "_project_challenges",
-            true,
-        );
-        $challenges = $challenges_json
-            ? json_decode($challenges_json, true)
-            : [];
-        if (!is_array($challenges)) {
-            $challenges = [];
-        }
+
+        // ACF fields
+        $overview = get_field("project_overview");
+        $role = get_field("role");
+        $project_type = get_field("project_type");
+        $stack = get_field("stack");
+        $focus = get_field("focus");
+        $responsibilities = get_field("project_responsibilities");
+        $problems = get_field("project_problems");
+        $solutions = get_field("project_solutions");
+
+        $has_quick_facts = $role || $project_type || $stack || $focus;
         ?>
 
 <article class="project-single">
@@ -51,36 +52,83 @@
         </div>
     <?php endif; ?>
 
-    <section class="project-overview">
-        <h2>Overview</h2>
-        <div class="project-content">
-            <?php the_content(); ?>
-        </div>
-    </section>
+    <?php if ($overview || $has_quick_facts): ?>
+        <div class="project-body">
+            <?php if ($overview): ?>
+                <section class="project-overview">
+                    <h2>Overview</h2>
+                    <div class="project-content">
+                        <?php echo $overview; ?>
+                    </div>
+                </section>
+            <?php endif; ?>
 
-    <?php if (!empty($challenges)): ?>
+            <?php if ($has_quick_facts): ?>
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <?php if ($role): ?>
+                        <div class="quick-fact">
+                            <span class="quick-fact__label">Role</span>
+                            <span class="quick-fact__value"><?php echo esc_html(
+                                $role,
+                            ); ?></span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($project_type): ?>
+                        <div class="quick-fact">
+                            <span class="quick-fact__label">Type</span>
+                            <span class="quick-fact__value"><?php echo esc_html(
+                                $project_type,
+                            ); ?></span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($stack): ?>
+                        <div class="quick-fact">
+                            <span class="quick-fact__label">Stack</span>
+                            <span class="quick-fact__value"><?php echo nl2br(
+                                esc_html($stack),
+                            ); ?></span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($focus): ?>
+                        <div class="quick-fact">
+                            <span class="quick-fact__label">Focus</span>
+                            <span class="quick-fact__value"><?php echo nl2br(
+                                esc_html($focus),
+                            ); ?></span>
+                        </div>
+                    <?php endif; ?>
+                </aside>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($responsibilities): ?>
+        <section class="project-responsibilities">
+            <h2>What I Did</h2>
+            <div class="project-content">
+                <?php echo $responsibilities; ?>
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <?php if ($problems || $solutions): ?>
         <section class="project-challenges">
             <h2>Challenges & Solutions</h2>
-            <?php foreach ($challenges as $challenge): ?>
-                <div class="challenge-card">
-                    <?php if (!empty($challenge["problem"])): ?>
-                        <div class="challenge-card__problem">
-                            <span class="challenge-label">The Problem</span>
-                            <?php echo portfolio_format_challenge_text(
-                                $challenge["problem"],
-                            ); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (!empty($challenge["solution"])): ?>
-                        <div class="challenge-card__solution">
-                            <span class="challenge-label">The Solution</span>
-                            <?php echo portfolio_format_challenge_text(
-                                $challenge["solution"],
-                            ); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+            <div class="challenge-card">
+                <?php if ($problems): ?>
+                    <div class="challenge-card__problem">
+                        <span class="challenge-label">The Problem</span>
+                        <?php echo $problems; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ($solutions): ?>
+                    <div class="challenge-card__solution">
+                        <span class="challenge-label">The Solution</span>
+                        <?php echo $solutions; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
         </section>
     <?php endif; ?>
 
