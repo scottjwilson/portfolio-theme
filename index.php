@@ -37,6 +37,8 @@
                 $projects = new WP_Query([
                     "post_type" => "project",
                     "posts_per_page" => 6,
+                    "orderby" => "menu_order",
+                    "order" => "ASC",
                 ]);
 
                 if ($projects->have_posts()):
