@@ -23,19 +23,5 @@ function register_portfolio_post_types()
         "menu_icon" => "dashicons-portfolio",
         "show_in_rest" => true,
     ]);
-
-    // Skills Post Type
-    register_post_type("skill", [
-        "labels" => [
-            "name" => "Skills",
-            "singular_name" => "Skill",
-            "add_new" => "Add New Skill",
-            "edit_item" => "Edit Skill",
-        ],
-        "public" => true,
-        "supports" => ["title"],
-        "menu_icon" => "dashicons-awards",
-        "show_in_rest" => true,
-    ]);
 }
 add_action("init", "register_portfolio_post_types");

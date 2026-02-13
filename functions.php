@@ -98,5 +98,4 @@ add_action("wp_head", "portfolio_meta_description", 1);
  */
 require_once PORTFOLIO_THEME_PATH . "/inc/vite-assets.php";
 require_once PORTFOLIO_THEME_PATH . "/inc/post-types.php";
-require_once PORTFOLIO_THEME_PATH . "/inc/meta-boxes.php";
 require_once PORTFOLIO_THEME_PATH . "/inc/customizer.php";
