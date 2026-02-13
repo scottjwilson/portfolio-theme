@@ -78,6 +78,25 @@ function minimal_portfolio_customize_register($wp_customize)
         "description" => "Recommended 150-160 characters for search results.",
     ]);
 
+    // Skills Section
+    $wp_customize->add_section("skills_section", [
+        "title" => "Skills Section",
+        "priority" => 31,
+    ]);
+
+    $wp_customize->add_setting("skills_list", [
+        "default" =>
+            "WordPress / PHP / ACF\nCustom Theme Development\nCore Web Vitals Optimization\nHTML5 / CSS3 / Modern JavaScript\nVite Build Workflow\nCloudflare / CDN Strategy\nGit & Version Control",
+        "sanitize_callback" => "sanitize_textarea_field",
+    ]);
+
+    $wp_customize->add_control("skills_list", [
+        "label" => "Skills",
+        "section" => "skills_section",
+        "type" => "textarea",
+        "description" => "One skill per line.",
+    ]);
+
     // Contact Section
     $wp_customize->add_section("contact_section", [
         "title" => "Contact Section",

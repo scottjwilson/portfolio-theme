@@ -296,35 +296,6 @@ h2 {
 
 /* ===== Skills ===== */
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-category {
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    padding: 1.75rem;
-    transition: all 0.3s;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent);
-}
-
-.skill-category:hover {
-    box-shadow: var(--card-shadow-hover);
-    border-color: var(--accent-border);
-    border-top-color: var(--accent);
-}
-
-.skill-category h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
-    font-weight: 500;
-}
-
 .skill-list {
     list-style: none;
     display: flex;

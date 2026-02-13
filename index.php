@@ -206,62 +206,20 @@
 
         <section id="skills" class="animate-in">
             <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <?php
-                $skills = new WP_Query([
-                    "post_type" => "skill",
-                    "posts_per_page" => -1,
-                ]);
-
-                $skills_by_category = [
-                    "Frontend" => [],
-                    "Backend" => [],
-                    "Tools" => [],
-                ];
-
-                if ($skills->have_posts()):
-                    while ($skills->have_posts()):
-                        $skills->the_post();
-                        $category = get_post_meta(
-                            get_the_ID(),
-                            "_skill_category",
-                            true,
-                        );
-                        if (isset($skills_by_category[$category])) {
-                            $skills_by_category[$category][] = get_the_title();
-                        }
-                    endwhile;
-                    wp_reset_postdata();
-
-                    foreach ($skills_by_category as $category => $skill_list):
-                        if (empty($skill_list)) {
-                            continue;
-                        } ?>
-                        <div class="skill-category">
-                            <h3><?php echo esc_html($category); ?></h3>
-                            <ul class="skill-list">
-                                <?php foreach ($skill_list as $skill): ?>
-                                    <li><?php echo esc_html($skill); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                        <?php
-                    endforeach;
-                else:
-                     ?>
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <ul class="skill-list">
-                            <li>SvelteKit / Svelte</li>
-                            <li>React / Next.js</li>
-                            <li>TypeScript</li>
-                            <li>Tailwind CSS / Bootstrap</li>
-                        </ul>
-                    </div>
-                    <?php
-                endif;
-                ?>
-            </div>
+            <?php
+            $skills_raw = get_theme_mod(
+                "skills_list",
+                "WordPress / PHP / ACF\nCustom Theme Development\nCore Web Vitals Optimization\nHTML5 / CSS3 / Modern JavaScript\nVite Build Workflow\nCloudflare / CDN Strategy\nGit & Version Control",
+            );
+            $skills = array_filter(
+                array_map("trim", explode("\n", $skills_raw)),
+            );
+            ?>
+            <ul class="skill-list">
+                <?php foreach ($skills as $skill): ?>
+                    <li><?php echo esc_html($skill); ?></li>
+                <?php endforeach; ?>
+            </ul>
         </section>
 
         <section id="why-me" class="why-me animate-in">
