@@ -215,11 +215,13 @@
                 array_map("trim", explode("\n", $skills_raw)),
             );
             ?>
-            <ul class="skill-list">
-                <?php foreach ($skills as $skill): ?>
-                    <li><?php echo esc_html($skill); ?></li>
-                <?php endforeach; ?>
-            </ul>
+            <div class="skills-card">
+                <ul class="skill-list">
+                    <?php foreach ($skills as $skill): ?>
+                        <li><?php echo esc_html($skill); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         </section>
 
         <section id="why-me" class="why-me animate-in">
