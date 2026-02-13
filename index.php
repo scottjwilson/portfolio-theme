@@ -224,23 +224,25 @@
             </ul>
         </section>
 
-        <section id="why-me" class="why-me animate-in">
-            <h2>Why Clients Choose Me</h2>
-            <ul class="why-me__list">
-                <li>I prioritize long-term stability over quick fixes</li>
-                <li>I communicate clearly and meet deadlines</li>
-                <li>I solve performance issues without unnecessary complexity</li>
-                <li>I treat websites like revenue assets</li>
-            </ul>
-        </section>
+        <div class="bottom-glow">
+            <section id="why-me" class="why-me animate-in">
+                <h2>Why Clients Choose Me</h2>
+                <ul class="why-me__list">
+                    <li>I prioritize long-term stability over quick fixes</li>
+                    <li>I communicate clearly and meet deadlines</li>
+                    <li>I solve performance issues without unnecessary complexity</li>
+                    <li>I treat websites like revenue assets</li>
+                </ul>
+            </section>
 
-        <section id="final-cta" class="final-cta animate-in">
-            <h2>If Your Website Needs to Be Faster, Cleaner, or More Reliable — Let's Fix It.</h2>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Schedule a Call</a>
-                <span class="cta-divider">or</span>
-                <a href="#projects" class="btn btn-secondary">View My Work</a>
-            </div>
-        </section>
+            <section id="final-cta" class="final-cta animate-in">
+                <h2>If Your Website Needs to Be Faster, Cleaner, or More Reliable — Let's Fix It.</h2>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Schedule a Call</a>
+                    <span class="cta-divider">or</span>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+            </section>
+        </div>
 
 <?php get_footer(); ?>
