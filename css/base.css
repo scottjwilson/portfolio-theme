@@ -524,6 +524,7 @@ h2 {
 }
 
 .final-cta .cta-buttons {
+    justify-content: center;
     align-items: center;
 }
 
