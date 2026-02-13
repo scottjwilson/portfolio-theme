@@ -507,6 +507,31 @@ h2 {
     background: var(--accent);
 }
 
+/* ===== Final CTA ===== */
+
+.final-cta {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta h2 {
+    font-weight: 300;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.final-cta .cta-buttons {
+    align-items: center;
+}
+
+.cta-divider {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
 /* ===== Footer ===== */
 
 footer {

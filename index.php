@@ -274,4 +274,13 @@
             </ul>
         </section>
 
+        <section id="final-cta" class="final-cta animate-in">
+            <h2>If Your Website Needs to Be Faster, Cleaner, or More Reliable — Let's Fix It.</h2>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Schedule a Call</a>
+                <span class="cta-divider">or</span>
+                <a href="#projects" class="btn btn-secondary">View My Work</a>
+            </div>
+        </section>
+
 <?php get_footer(); ?>
