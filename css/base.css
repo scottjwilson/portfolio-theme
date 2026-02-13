@@ -80,6 +80,11 @@ nav {
 
 .hero {
     padding: 6rem 0 5rem;
+    background: radial-gradient(
+        800px circle at 20% 10%,
+        rgba(100, 150, 255, 0.08),
+        transparent 60%
+    );
 }
 
 .hero-label {
