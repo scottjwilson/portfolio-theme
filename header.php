@@ -21,11 +21,14 @@
                 "fallback_cb" => function () {
                     $base = esc_url(home_url("/"));
                     echo '<ul class="nav-links">';
+                    echo '<li><a href="' . $base . '#projects">Work</a></li>';
+                    echo '<li><a href="' . $base . '#skills">Skills</a></li>';
                     echo '<li><a href="' .
                         $base .
-                        '#projects">Projects</a></li>';
-                    echo '<li><a href="' . $base . '#skills">Skills</a></li>';
-                    echo '<li><a href="' . $base . '#contact">Contact</a></li>';
+                        '#services">Services</a></li>';
+                    echo '<li><a href="' .
+                        $base .
+                        '#final-cta">Contact</a></li>';
                     echo "</ul>";
                 },
             ]); ?>
