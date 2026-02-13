@@ -41,6 +41,7 @@
                     "order" => "ASC",
                 ]);
 
+                $project_index = 0;
                 if ($projects->have_posts()):
                     while ($projects->have_posts()):
 
@@ -57,7 +58,14 @@
                                 <?php if (has_post_thumbnail()): ?>
                                     <?php the_post_thumbnail("project-card", [
                                         "class" => "project-card__img",
-                                        "loading" => "lazy",
+                                        "loading" =>
+                                            $project_index === 0
+                                                ? "eager"
+                                                : "lazy",
+                                        "fetchpriority" =>
+                                            $project_index === 0
+                                                ? "high"
+                                                : false,
                                     ]); ?>
                                 <?php else: ?>
                                     <div class="project-card__placeholder">
@@ -87,7 +95,7 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php
+                        <?php $project_index++;
                     endwhile;
                     wp_reset_postdata();
                     // Default projects if none exist
