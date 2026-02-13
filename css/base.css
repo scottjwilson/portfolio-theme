@@ -351,9 +351,121 @@ h2 {
     opacity: 0.6;
 }
 
-/* ===== Contact ===== */
+/* ===== Value Proposition / Performance ===== */
 
-.contact {
+.value-prop h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    max-width: 700px;
+}
+
+.value-prop__body {
+    max-width: 700px;
+}
+
+.value-prop__text {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.value-prop__text p {
+    margin-bottom: 0.75rem;
+}
+
+.value-prop__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.value-prop__list li {
+    color: var(--text-dim);
+    font-size: 1rem;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.value-prop__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.value-prop__closing {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* ===== Services ===== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    border-color: var(--accent-border);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-card ul li {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-card ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+}
+
+/* ===== Why Work With Me ===== */
+
+.why-me {
     text-align: center;
     padding: 4rem 3rem;
     background: var(--card-bg);
@@ -361,18 +473,38 @@ h2 {
     border: 1px solid var(--border);
 }
 
-.contact h2 {
-    margin-bottom: 1rem;
-}
-
-.contact p {
-    color: var(--text-dim);
+.why-me h2 {
     margin-bottom: 2rem;
-    font-size: 1.1rem;
 }
 
-.contact .cta-buttons {
-    justify-content: center;
+.why-me__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.why-me__list li {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.why-me__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
 }
 
 /* ===== Footer ===== */
@@ -659,7 +791,16 @@ footer {
         flex-direction: column;
     }
 
-    .contact {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-prop h2,
+    .value-prop p {
+        max-width: 100%;
+    }
+
+    .why-me {
         padding: 3rem 1.5rem;
     }
 

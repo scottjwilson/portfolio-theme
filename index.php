@@ -35,6 +35,79 @@
             </div>
         </section>
 
+        <section id="what-i-do" class="value-prop animate-in">
+            <h2>I Help Businesses Build WordPress Systems That Actually Scale</h2>
+            <div class="value-prop__body">
+                <div class="value-prop__text">
+                    <p>Most WordPress sites slow down over time. They accumulate plugins, performance issues, and fragile updates.</p>
+                    <p>I focus on:</p>
+                </div>
+                <ul class="value-prop__list">
+                    <li>Clean architecture</li>
+                    <li>Structured data modeling</li>
+                    <li>Core Web Vitals optimization</li>
+                    <li>Long-term maintainability</li>
+                </ul>
+                <p class="value-prop__closing">Your website should be a business asset — not a liability.</p>
+            </div>
+        </section>
+
+        <section id="services" class="animate-in">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom WordPress Development</h3>
+                    <ul>
+                        <li>Custom themes built from scratch</li>
+                        <li>Advanced Custom Fields (ACF)</li>
+                        <li>Custom Post Types & relational data structures</li>
+                        <li>Structured CMS architecture</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Performance Optimization</h3>
+                    <ul>
+                        <li>Lighthouse 90+ performance builds</li>
+                        <li>Asset optimization & lazy loading</li>
+                        <li>Server configuration & caching strategy</li>
+                        <li>CDN implementation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>WooCommerce & E-commerce</h3>
+                    <ul>
+                        <li>Clean checkout flows</li>
+                        <li>Performance-optimized product pages</li>
+                        <li>Payment gateway integrations</li>
+                        <li>Technical SEO foundations</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Maintenance & Technical Support</h3>
+                    <ul>
+                        <li>Plugin conflict resolution</li>
+                        <li>Security hardening</li>
+                        <li>Hosting migrations</li>
+                        <li>Ongoing update strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="performance" class="value-prop animate-in">
+            <h2>Performance Isn't an Afterthought</h2>
+            <div class="value-prop__body">
+                <p class="value-prop__text">Every site I build or optimize is engineered to:</p>
+                <ul class="value-prop__list">
+                    <li>Achieve high 90s Lighthouse scores</li>
+                    <li>Load quickly on mobile and desktop</li>
+                    <li>Maintain clean code structure</li>
+                    <li>Remain stable through updates</li>
+                </ul>
+                <p class="value-prop__closing">Speed impacts conversions, SEO, and user trust. I treat performance as infrastructure — not a cosmetic metric.</p>
+            </div>
+        </section>
+
         <section id="projects" class="animate-in">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
@@ -103,7 +176,6 @@
                         <?php $project_index++;
                     endwhile;
                     wp_reset_postdata();
-                    // Default projects if none exist
                 else:
                      ?>
                     <div class="project-card">
@@ -175,7 +247,6 @@
                         </div>
                         <?php
                     endforeach;
-                    // Default skills if none exist
                 else:
                      ?>
                     <div class="skill-category">
@@ -193,20 +264,14 @@
             </div>
         </section>
 
-        <section id="contact" class="contact animate-in">
-            <h2>Let's Work Together</h2>
-            <p>I'm currently available for freelance projects and full-time opportunities.</p>
-            <div class="cta-buttons">
-                <a href="mailto:<?php echo esc_attr(
-                    get_theme_mod("contact_email", "your.email@example.com"),
-                ); ?>" class="btn btn-primary">Send Email</a>
-                <a href="<?php echo esc_url(
-                    get_theme_mod(
-                        "github_url",
-                        "https://github.com/scottjwilson",
-                    ),
-                ); ?>" target="_blank" class="btn btn-secondary">GitHub</a>
-            </div>
+        <section id="why-me" class="why-me animate-in">
+            <h2>Why Clients Choose Me</h2>
+            <ul class="why-me__list">
+                <li>I prioritize long-term stability over quick fixes</li>
+                <li>I communicate clearly and meet deadlines</li>
+                <li>I solve performance issues without unnecessary complexity</li>
+                <li>I treat websites like revenue assets</li>
+            </ul>
         </section>
 
 <?php get_footer(); ?>
