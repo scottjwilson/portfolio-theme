@@ -1,5 +1,6 @@
 <?php get_header(); ?>
         <section class="hero">
+            <span class="hero-label">WordPress Developer</span>
             <h1>
                 <?php
                 $hero_title = get_theme_mod(
@@ -30,7 +31,7 @@
             </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="animate-in">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <?php
@@ -127,7 +128,7 @@
             </div>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="animate-in">
             <h2>Skills & Technologies</h2>
             <div class="skills-grid">
                 <?php
@@ -188,7 +189,7 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact animate-in">
             <h2>Let's Work Together</h2>
             <p>I'm currently available for freelance projects and full-time opportunities.</p>
             <div class="cta-buttons">

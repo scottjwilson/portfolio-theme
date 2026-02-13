@@ -1,16 +1,17 @@
 :root {
-    --bg: #fafaf8;
-    --text: #1a1a1a;
-    --text-dim: #6b6b6b;
-    --accent: #0d7d73;
-    --accent-hover: #0f766e;
-    --accent-light: rgba(13, 148, 136, 0.08);
-    --accent-border: rgba(13, 148, 136, 0.15);
-    --border: #e8e6e1;
-    --card-bg: #ffffff;
-    --card-hover: #ffffff;
-    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-    --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
-    --card-radius: 12px;
-    --placeholder-bg: #f0eeeb;
+    --bg: #0b1121;
+    --bg-card: #131c31;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-light: rgba(59, 130, 246, 0.08);
+    --accent-border: rgba(59, 130, 246, 0.2);
+    --border: rgba(148, 163, 184, 0.1);
+    --card-bg: #131c31;
+    --card-hover: #1a2540;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 8px 32px rgba(59, 130, 246, 0.15);
+    --card-radius: 16px;
+    --placeholder-bg: #1a2540;
 }

@@ -9,7 +9,10 @@
     <div class="container">
         <nav>
             <a href="<?php echo home_url(); ?>" class="logo">
-                <?php bloginfo("name"); ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo(
+    "name",
+); ?>" class="logo-img">
+                <span class="logo-text"><?php bloginfo("name"); ?></span>
             </a>
             <?php wp_nav_menu([
                 "theme_location" => "primary",

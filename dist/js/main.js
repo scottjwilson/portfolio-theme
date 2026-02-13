@@ -1,1 +1,1 @@
-console.log("Theme main.js loaded via Vite");
+const s=new IntersectionObserver(e=>{e.forEach(r=>{r.isIntersecting&&(r.target.classList.add("visible"),s.unobserve(r.target))})},{threshold:.1});document.querySelectorAll(".animate-in").forEach(e=>s.observe(e));
