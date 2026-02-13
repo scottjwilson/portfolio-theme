@@ -26,8 +26,12 @@
                 ); ?>
             </p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <a href="#projects" class="btn btn-primary"><?php echo esc_html(
+                    get_theme_mod("hero_btn_primary_text", "View Projects"),
+                ); ?></a>
+                <a href="#contact" class="btn btn-secondary"><?php echo esc_html(
+                    get_theme_mod("hero_btn_secondary_text", "Get in Touch"),
+                ); ?></a>
             </div>
         </section>
 

@@ -38,6 +38,28 @@ function minimal_portfolio_customize_register($wp_customize)
         "type" => "textarea",
     ]);
 
+    $wp_customize->add_setting("hero_btn_primary_text", [
+        "default" => "View Projects",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("hero_btn_primary_text", [
+        "label" => "Primary Button Text",
+        "section" => "hero_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("hero_btn_secondary_text", [
+        "default" => "Get in Touch",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("hero_btn_secondary_text", [
+        "label" => "Secondary Button Text",
+        "section" => "hero_section",
+        "type" => "text",
+    ]);
+
     // SEO
     $wp_customize->add_section("seo_section", [
         "title" => "SEO",
