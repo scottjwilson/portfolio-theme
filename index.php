@@ -206,6 +206,7 @@
             </div>
         </section>
 
+        <div class="bottom-glow">
         <section id="skills" class="animate-in">
             <h2>Skills & Technologies</h2>
             <?php
@@ -224,7 +225,6 @@
             </ul>
         </section>
 
-        <div class="bottom-glow">
             <section id="why-me" class="why-me animate-in">
                 <h2>Why Clients Choose Me</h2>
                 <ul class="why-me__list">
@@ -243,6 +243,5 @@
                     <a href="#projects" class="btn btn-secondary">View My Work</a>
                 </div>
             </section>
-        </div>
 
 <?php get_footer(); ?>

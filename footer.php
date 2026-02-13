@@ -4,6 +4,7 @@
      "name",
  ); ?>. All rights reserved</p>
 </footer>
+</div><!-- .bottom-glow -->
 </div>
  <?php wp_footer(); ?>
 </body>
