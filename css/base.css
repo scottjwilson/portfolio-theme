@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family:
         "Inter",
@@ -16,7 +20,6 @@ body {
     color: var(--text);
     line-height: 1.7;
     font-weight: 300;
-    overflow-x: hidden;
 }
 
 .container {
