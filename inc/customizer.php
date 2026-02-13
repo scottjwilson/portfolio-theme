@@ -15,6 +15,17 @@ function minimal_portfolio_customize_register($wp_customize)
         "priority" => 30,
     ]);
 
+    $wp_customize->add_setting("hero_eyebrow", [
+        "default" => "WordPress Developer",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("hero_eyebrow", [
+        "label" => "Eyebrow Text",
+        "section" => "hero_section",
+        "type" => "text",
+    ]);
+
     $wp_customize->add_setting("hero_title", [
         "default" => "Building digital experiences that matter",
         "sanitize_callback" => "sanitize_text_field",

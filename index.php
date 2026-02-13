@@ -1,6 +1,8 @@
 <?php get_header(); ?>
         <section class="hero">
-            <span class="hero-label">WordPress Developer</span>
+            <span class="hero-label"><?php echo esc_html(
+                get_theme_mod("hero_eyebrow", "WordPress Developer"),
+            ); ?></span>
             <h1>
                 <?php
                 $hero_title = get_theme_mod(
