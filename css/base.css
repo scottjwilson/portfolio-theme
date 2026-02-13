@@ -439,10 +439,7 @@ h2 {
 
 .why-me {
     text-align: center;
-    padding: 4rem 3rem;
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    border: 1px solid var(--border);
+    padding: 4rem 0;
 }
 
 .why-me h2 {
@@ -801,10 +798,6 @@ footer {
     .value-prop h2,
     .value-prop p {
         max-width: 100%;
-    }
-
-    .why-me {
-        padding: 3rem 1.5rem;
     }
 
     .logo-text {
