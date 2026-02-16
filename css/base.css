@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
 body {
     font-family:
         "Inter",
@@ -37,9 +42,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem 2rem;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(11, 17, 33, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    max-width: 100%;
+}
+
+nav > * {
+    max-width: 1100px;
 }
 
 .logo {
@@ -85,7 +102,7 @@ nav {
 /* ===== Hero ===== */
 
 .hero {
-    padding: 6rem 0 5rem;
+    padding: 8rem 0 5rem;
 }
 
 .hero-label {
@@ -747,7 +764,7 @@ footer {
     }
 
     .hero {
-        padding: 4rem 0 2rem;
+        padding: 6rem 0 2rem;
     }
 
     h1 {
